@@ -16,10 +16,10 @@ func InitializeRouter(r *gin.Engine) {
 				"msg": "Get Client",
 			})
 		})
-		v1.POST("/opening")
-		v1.DELETE("/opening")
-		v1.PUT("/opening")
-		v1.GET("/openings")
+		v1.POST("/client")
+		v1.DELETE("/client")
+		v1.PUT("/client")
+		v1.GET("/clients")
 
 	}
 }
