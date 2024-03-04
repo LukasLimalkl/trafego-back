@@ -11,7 +11,6 @@ func InitializeRouter(r *gin.Engine) {
 
 	{
 		v1.GET("/client", handler.GetClientHandler)
-
 		v1.POST("/client", handler.CreateClientHandler)
 		v1.DELETE("/client", handler.DeleteClientHandler)
 		v1.PUT("/client", handler.UpdateClientHandler)
