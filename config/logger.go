@@ -22,7 +22,7 @@ func NewLogger(p string) *Logger {
 		debug:   log.New(writer, "DEBUG: ", logger.Flags()),
 		info:    log.New(writer, "INFO: ", logger.Flags()),
 		warning: log.New(writer, "WARNING: ", logger.Flags()),
-		err:     log.New(writer, "ERR: ", logger.Flags()),
+		err:     log.New(writer, "ERROR: ", logger.Flags()),
 		writer:  writer,
 	}
 }
@@ -38,7 +38,7 @@ func (l *Logger) Info(v ...interface{}) {
 func (l *Logger) Warn(v ...interface{}) {
 	l.warning.Println(v...)
 }
-func (l *Logger) Err(v ...interface{}) {
+func (l *Logger) Error(v ...interface{}) {
 	l.err.Println(v...)
 }
 
@@ -53,6 +53,6 @@ func (l *Logger) Infof(format string, v ...interface{}) {
 func (l *Logger) Warnf(format string, v ...interface{}) {
 	l.warning.Printf(format, v...)
 }
-func (l *Logger) Errf(format string, v ...interface{}) {
+func (l *Logger) Errorf(format string, v ...interface{}) {
 	l.err.Printf(format, v...)
 }
