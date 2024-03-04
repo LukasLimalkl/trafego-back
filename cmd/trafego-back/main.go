@@ -1,25 +1,21 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/LukasLimalkl/trafego-back/config"
 	"github.com/LukasLimalkl/trafego-back/internal/router"
-	"gorm.io/gorm"
 )
 
-type Product struct {
-	gorm.Model
-	Code  string
-	Price uint
-}
+var (
+	logger *config.Logger
+)
 
 func main() {
 
+	logger = config.GetLogger("main")
 	// Initialize Configs
 	err := config.Init()
 	if err != nil {
-		fmt.Println(err)
+		logger.Errorf("config initalization error: %v", err)
 		return
 	}
 
